@@ -162,7 +162,7 @@ for episode in range(0, len(FriendsDict)):
 
     joeySentiment = sentiment.analyze([unicode(joey[episode], errors = 'ignore')])
     joeyScore.append(np.mean(joeySentiment['scores']))
-    joeyScore.append(np.var(joeySentiment['scores']))
+    joeyVariance.append(np.var(joeySentiment['scores']))
 
     rachelSentiment = sentiment.analyze([unicode(rachel[episode], errors = 'ignore')])
     rachelScore.append(np.mean(rachelSentiment['scores']))
