@@ -9,7 +9,6 @@ Created on Wed Nov 30 12:18:15 2016
 #%% Build list of links to Friends scripts 
 import urllib2
 from bs4 import BeautifulSoup
-import pandas as pd
 
 scripts = 'http://www.livesinabox.com/friends/scripts.shtml'
 page = urllib2.urlopen(scripts)
@@ -18,7 +17,7 @@ soup = BeautifulSoup(page)
 right_table = soup.findAll('table')[4]
 
 links = []
-#-- extract only friends episodes
+#-- extract only friends episodes from list of links
 for row in range(41, len(right_table.find_all('a')) - 3):
     links.append(right_table.find_all('a')[row]['href'])
     
@@ -27,13 +26,14 @@ for row in range(41, len(right_table.find_all('a')) - 3):
 
 import re
 
+# remove html from scraped text
 tag_re = re.compile(r'<[^>]+>')
 
 def remove_tags(text):
     return tag_re.sub('', text).replace('\n', ' ').replace('\xc2', ' ')\
     .replace('\xa0', ' ').replace('\x92', ' ').replace('\x85', ' ').lower()
 
-# Store information from 
+# Store the scripts from the links
 FriendsDict = {}
 for episode in range(len(links)):
     tmpLink = 'http://www.livesinabox.com/friends/' + links[episode]
