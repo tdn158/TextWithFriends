@@ -1,3 +1,6 @@
+# Step 2 of analysis: Correlate rankings from Friends sentiment statistics with user polls 
+
+
 # Generating Rankings from the data
 
 sentimentList <- c("phoebe" = 1, "rachel" = 2, "chandler" = 3, "joey" = 4, "monica" = 5, "ross" = 6)
@@ -9,6 +12,8 @@ seasonRankSentiment <- c("one" = 7, "two" = 8, "three" = 3, "four" = 2, "five" =
 seasonRankVariance <- c("one" = 10, "two" = 6, "three" = 3, "four" = 8, "five" = 5, "six" = 2, "seven" = 9, "eight" = 7, "nine" = 1, "ten" = 4)
 seasonRankMaxSentiment <- c("one" = 5, "two" = 10, "three" = 1, "four" = 2, "five" = 8, "six" = 4, "seven" = 9, "eight" = 3, "nine" = 6, "ten" = 7)
 seasonRankRangeSentiment <- c("one" = 7, "two" = 10, "three" = 1, "four" = 2, "five" = 6, "six" = 8, "seven" = 4, "eight" = 3, "nine" = 5, "ten" = 9)
+
+# Below are rankings from user polls
 
 # Source  - http://www.puckermob.com/entertainment/ranking-the-friends-characters-from-least-to-most-tolerable
 onlineList <- c("phoebe" = 1, "rachel" = 4, "chandler" = 2, "joey" = 3, "monica" = 5, "ross" = 6)
